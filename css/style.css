@@ -6,20 +6,47 @@ body{
 
 #store1{
   font-size: 20px;
+  padding: 10px;
+  background-color: blue;
 }
 
 #store2{
   font-size: 20px;
+  padding: 10px;
+  background-color: blue;
 }
 
 #store3{
-  font-size: 20px;;
+  font-size: 20px;
+  padding: 10px;
+  background-color: blue;
+
 }
 
 #store4{
   font-size: 20px;
+  padding: 10px;
+  background-color: blue;
+
 }
 
 #store5{
   font-size: 20px;
+  padding: 10px;
+  background-color: blue;
+
+}
+
+#link1{
+ font-size: 50px;
+ position: relative;
+ left: 900px;
+ bottom: 100px;
+}
+
+#link2{
+  font-size: 50px;
+  position: relative;
+  left: 900px;
+  bottom: 100px;
 }
