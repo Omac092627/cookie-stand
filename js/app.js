@@ -32,6 +32,7 @@ var listElement1 = document.createElement('li');
 listElement1.textContent = store1.seattle();
 seattleElement.appendChild(listElement1);
 
+
 store1.seattle();
 console.log(store1.seattle());
 
