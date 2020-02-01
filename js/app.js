@@ -23,18 +23,18 @@ var store1 = {
     }
     newArray.push(` Total: ${totalOfCookies} cookies`)
     return newArray;
+  },
+
+  render: function renderToPage() {
+    var seattleElement = document.getElementById('store1');
+    var listElement1 = document.createElement('li');
+    listElement1.textContent = store1.seattle();
+    seattleElement.appendChild(listElement1);
   }
 };
 
 
-var seattleElement = document.getElementById('store1');
-var listElement1 = document.createElement('li');
-listElement1.textContent = store1.seattle();
-seattleElement.appendChild(listElement1);
-
-
-store1.seattle();
-console.log(store1.seattle());
+store1.render();
 
 
 var store2 = {
@@ -43,7 +43,7 @@ var store2 = {
   max: 24,
   averageCookieSales: 1.2,
 
-  Tokyo: function getRandomInt() {
+  tokyo: function getRandomInt() {
     var newArray = [];
     var totalOfCookies = 0;
 
@@ -54,16 +54,19 @@ var store2 = {
     }
     newArray.push(` Total: ${totalOfCookies} cookies`)
     return newArray;
+  },
+  render: function renderToPage() {
+    var tokyoElement = document.getElementById('store2');
+    var listElement2 = document.createElement('li');
+    listElement2.textContent = store2.tokyo();
+    tokyoElement.appendChild(listElement2);
   }
 };
 
-var tokyoElement = document.getElementById('store2');
-var listElement2 = document.createElement('li');
-listElement2.textContent = store2.Tokyo();
-tokyoElement.appendChild(listElement2);
 
-store2.Tokyo();
-console.log(store2.Tokyo());
+
+
+store2.render();
 
 
 var store3 = {
@@ -72,7 +75,7 @@ var store3 = {
   max: 38,
   averageCookieSales: 3.7,
 
-  Dubai: function getRandomInt() {
+  dubai: function getRandomInt() {
     var newArray = [];
     var totalOfCookies = 0;
 
@@ -83,16 +86,18 @@ var store3 = {
     }
     newArray.push(` Total: ${totalOfCookies} cookies`)
     return newArray;
+  },
+  render: function renderToPage() {
+    var dubaiElement = document.getElementById('store3');
+    var listElement3 = document.createElement('li');
+    listElement3.textContent = store3.dubai();
+    dubaiElement.appendChild(listElement3);
   }
 };
 
-var dubaiElement = document.getElementById('store3');
-var listElement3 = document.createElement('li');
-listElement3.textContent = store3.Dubai();
-dubaiElement.appendChild(listElement3);
 
-store3.Dubai();
-console.log(store3.Dubai());
+
+store3.render();
 
 
 
@@ -102,7 +107,7 @@ var store4 = {
   max: 38,
   averageCookieSales: 2.3,
 
-  Paris: function getRandomInt() {
+  paris: function getRandomInt() {
     var newArray = [];
     var totalOfCookies = 0;
 
@@ -113,16 +118,18 @@ var store4 = {
     }
     newArray.push(` Total: ${totalOfCookies} cookies`)
     return newArray;
+  },
+  render: function renderToPage() {
+    var parisElement = document.getElementById('store4');
+    var listElement4 = document.createElement('li');
+    listElement4.textContent = store4.paris();
+    parisElement.appendChild(listElement4);
   }
 };
-var parisElement = document.getElementById('store4');
-var listElement4 = document.createElement('li');
-listElement4.textContent = store4.Paris();
-parisElement.appendChild(listElement4);
 
 
-store4.Paris();
-console.log(store4.Paris());
+
+store4.render();
 
 
 var store5 = {
@@ -131,7 +138,7 @@ var store5 = {
   max: 16,
   averageCookieSales: 4.6,
 
-  Lima: function getRandomInt() {
+  lima: function getRandomInt() {
     var newArray = [];
     var totalOfCookies = 0;
 
@@ -142,13 +149,15 @@ var store5 = {
     }
     newArray.push(` Total: ${totalOfCookies} cookies`)
     return newArray;
+  },
+  render: function renderToPage() {
+    var limaElement = document.getElementById('store5');
+    var listElement5 = document.createElement('li');
+    listElement5.textContent = store5.lima();
+    limaElement.appendChild(listElement5);
   }
 };
 
-var limaElement = document.getElementById('store5');
-var listElement5 = document.createElement('li');
-listElement5.textContent = store5.Lima();
-limaElement.appendChild(listElement5);
 
-store5.Lima();
-console.log(store5.Lima());
+
+store5.render();
