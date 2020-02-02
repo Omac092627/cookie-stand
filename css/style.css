@@ -20,7 +20,7 @@ body{
   bottom: 100px;
 }
 
-div{
+th{
   display: inline-flex;
   margin: 210px;
   font-size: 30px;
