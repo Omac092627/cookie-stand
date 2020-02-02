@@ -2,8 +2,82 @@
 
 var customers = ['6am: ', ' 7am: ', ' 8am: ', ' 9am: ', ' 10am: ', ' 11am: ', ' 12pm: ', ' 1pm: ', ' 2pm: ', ' 3pm: ', ' 4pm: ', ' 5pm: ', ' 6pm: ', ' 7pm: '];
 
+var Stores1 = []
+
+function Stores(name, min, max, averageCookieSales) {
+  this.name = name;
+  this.min = min;
+  this.max = max;
+  this.averageCookieSales = averageCookieSales;
+  Stores1.push(this)
+};
+
+Stores.prototype.random = function random() {
+  var newArray = [];
+  var totalOfCookies = 0;
+  for (var i = 0; i < customers.length; i++) {
+    var random = Math.round(Math.floor(Math.random() * (this.max - this.min + 1) + this.min) * this.averageCookieSales);
+    totalOfCookies = totalOfCookies + random;
+    newArray.push(`${customers[i]}  ${random}  cookies`);
+  }
+  newArray.push(` Total: ${totalOfCookies} cookies`)
+  return newArray;
+};
+
+Stores.prototype.render = function () {
+  var firstElement = document.getElementById('store1');
+  var listElement1 = document.createElement('tr');
+  listElement1.textContent = this.random();
+  firstElement.appendChild(listElement1);
+
+  var secondElement = document.getElementById('store2');
+  var listElement2 = document.createElement('tr');
+  listElement2.textContent = this.random();
+  secondElement.appendChild(listElement2);
+
+  var thirdElement = document.getElementById('store3');
+  var listElement3 = document.createElement('tr');
+  listElement3.textContent = this.random();
+  thirdElement.appendChild(listElement3);
+
+  var fourthElement = document.getElementById('store4');
+  var listElement4 = document.createElement('tr');
+  listElement4.textContent = this.random();
+  fourthElement.appendChild(listElement4);
+
+  var fifthElement = document.getElementById('store5');
+  var listElement5 = document.createElement('tr');
+  listElement5.textContent = this.random();
+  fifthElement.appendChild(listElement5);
+}
 
 
+
+new Stores('Seattle', 23, 65, 6.3);
+new Stores('Tokyo', 3, 24, 1.2);
+new Stores('Dubai', 11, 27, 3.7);
+new Stores('Paris', 20, 38, 2.3);
+new Stores('Lima', 2, 16, 4.6);
+
+
+//Stores1[0].random();
+Stores1[0].render();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
 
 var store1 = {
@@ -161,3 +235,6 @@ var store5 = {
 
 
 store5.render();
+
+
+*/
