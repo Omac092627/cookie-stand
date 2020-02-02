@@ -20,16 +20,17 @@ body{
   bottom: 100px;
 }
 
-th{
-  display: inline-flex;
-  margin: 210px;
-  font-size: 30px;
-  padding: 40px;
-  background-color: blue;
-  border-color: whitesmoke;
-  border: solid;
-  margin: 10px;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  
+  td{
+    columns: 15;
 }
+
+  th{
+    float: left;
+  }
+
+  th, td{
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+  }

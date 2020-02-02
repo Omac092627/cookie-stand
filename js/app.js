@@ -26,27 +26,27 @@ Stores.prototype.random = function random() {
 
 Stores.prototype.render = function () {
   var firstElement = document.getElementById('store1');
-  var listElement1 = document.createElement('tr');
+  var listElement1 = document.createElement('td');
   listElement1.textContent = this.random();
   firstElement.appendChild(listElement1);
 
   var secondElement = document.getElementById('store2');
-  var listElement2 = document.createElement('tr');
+  var listElement2 = document.createElement('td');
   listElement2.textContent = this.random();
   secondElement.appendChild(listElement2);
 
   var thirdElement = document.getElementById('store3');
-  var listElement3 = document.createElement('tr');
+  var listElement3 = document.createElement('td');
   listElement3.textContent = this.random();
   thirdElement.appendChild(listElement3);
 
   var fourthElement = document.getElementById('store4');
-  var listElement4 = document.createElement('tr');
+  var listElement4 = document.createElement('td');
   listElement4.textContent = this.random();
   fourthElement.appendChild(listElement4);
 
   var fifthElement = document.getElementById('store5');
-  var listElement5 = document.createElement('tr');
+  var listElement5 = document.createElement('td');
   listElement5.textContent = this.random();
   fifthElement.appendChild(listElement5);
 }
