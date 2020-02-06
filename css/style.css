@@ -1,36 +1,6 @@
-body{
-  background-color: black;
-  color: white;
-}
-
-
-#link1{
- font-size: 50px;
- position: relative;
- left: 900px;
- bottom: 100px;
- width: 30px;
- 
-}
-
-#link2{
-  font-size: 50px;
+table{
   position: relative;
-  left: 900px;
-  bottom: 100px;
+  margin-top: 250px;
+  border: 1px solid black;
+  border-collapse: collapse;
 }
-
-  td{
-    columns: 15;
-}
-
-  th{
-    float: left;
-  }
-
-  th, td{
-    border-bottom: 1px solid white;
-    border-top: 1px solid white;
-    border-right: 1px solid white;
-    border-left: 1px solid white;
-  }
