@@ -1,55 +1,29 @@
 'use strict'
 
-var customers = ['6am: ', ' 7am: ', ' 8am: ', ' 9am: ', ' 10am: ', ' 11am: ', ' 12pm: ', ' 1pm: ', ' 2pm: ', ' 3pm: ', ' 4pm: ', ' 5pm: ', ' 6pm: ', ' 7pm: '];
 
-var Stores1 = []
+var customersTrack = []; // Stores1 will store your random function
+var locations = [];
+var cookiesArray = [];
+var customers = [` 6:00am `, ` 7:00am `, ` 8:00am `, ` 9:00am `, ` 10:00am `, ` 11:00am `, ` 12:00pm `, ` 1:00pm `, ` 2:00pm `, ` 3:00pm `, `4:00pm `, ` 5: 00pm `, ` 6: 00pm `, ` 7: 00pm `, ` Total of Locations `];
+var totalCookiesArrayForYaBoy = []
 
 function Stores(name, min, max, averageCookieSales) {
   this.name = name;
   this.min = min;
   this.max = max;
   this.averageCookieSales = averageCookieSales;
-  Stores1.push(this)
+
+  locations.push(this)//push your new properties into the object constructor
 };
 
-Stores.prototype.random = function random() {
-  var newArray = [];
-  var totalOfCookies = 0;
-  for (var i = 0; i < customers.length; i++) {
-    var random = Math.round(Math.floor(Math.random() * (this.max - this.min + 1) + this.min) * this.averageCookieSales);
-    totalOfCookies = totalOfCookies + random;
-    newArray.push(`${customers[i]}  ${random}  cookies`);
-  }
-  newArray.push(` Total: ${totalOfCookies} cookies`)
-  return newArray;
-};
 
-Stores.prototype.render = function () {
-  var firstElement = document.getElementById('store1');
-  var listElement1 = document.createElement('tr');
-  listElement1.textContent = this.random();
-  firstElement.appendChild(listElement1);
 
-  var secondElement = document.getElementById('store2');
-  var listElement2 = document.createElement('tr');
-  listElement2.textContent = this.random();
-  secondElement.appendChild(listElement2);
-
-  var thirdElement = document.getElementById('store3');
-  var listElement3 = document.createElement('tr');
-  listElement3.textContent = this.random();
-  thirdElement.appendChild(listElement3);
-
-  var fourthElement = document.getElementById('store4');
-  var listElement4 = document.createElement('tr');
-  listElement4.textContent = this.random();
-  fourthElement.appendChild(listElement4);
-
-  var fifthElement = document.getElementById('store5');
-  var listElement5 = document.createElement('tr');
-  listElement5.textContent = this.random();
-  fifthElement.appendChild(listElement5);
+var header = function () {
+  var headingElement = document.getElementById('head');
+  var head = document.createTextNode(customers);
+  headingElement.appendChild(head);
 }
+header();
 
 
 
@@ -58,183 +32,75 @@ new Stores('Tokyo', 3, 24, 1.2);
 new Stores('Dubai', 11, 27, 3.7);
 new Stores('Paris', 20, 38, 2.3);
 new Stores('Lima', 2, 16, 4.6);
+new Stores('Random', 65, 170, 18.1)
 
 
-//Stores1[0].random();
-Stores1[0].render();
+Stores.prototype.random = function () {
+  var newArray = [];
+  var totalOfCookies = 0; // I want to keep track of the total//
+  for (var i = 0; i < 14; i++) {
+    var random = Math.floor(Math.random() * (this.max - this.min + 1) + this.min) * Math.floor(this.averageCookieSales);
+    totalOfCookies = totalOfCookies + random;
+    newArray.push(`${customersTrack} ${random}  cookies`);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-
-var store1 = {
-  name: 'Seattle',
-  min: 23,
-  max: 65,
-  averageCookieSales: 6.3,
-
-  seattle: function getRandomInt() {
-    var newArray = [];
-    var totalOfCookies = 0;
-
-    for (var i = 0; i < customers.length; i++) {
-      var random = Math.round(Math.floor(Math.random() * (this.max - this.min + 1) + this.min) * this.averageCookieSales);
-      totalOfCookies = totalOfCookies + random;
-      newArray.push(`${customers[i]}  ${random}  cookies`);
-    }
-    newArray.push(` Total: ${totalOfCookies} cookies`)
-    return newArray;
-  },
-
-  render: function renderToPage() {
-    var seattleElement = document.getElementById('store1');
-    var listElement1 = document.createElement('li');
-    listElement1.textContent = store1.seattle();
-    seattleElement.appendChild(listElement1);
   }
-};
 
+  newArray.push(`${cookiesArray} ${totalOfCookies}`)
 
-store1.render();
-
-
-var store2 = {
-  name: 'Tokyo',
-  min: 3,
-  max: 24,
-  averageCookieSales: 1.2,
-
-  tokyo: function getRandomInt() {
-    var newArray = [];
-    var totalOfCookies = 0;
-
-    for (var i = 0; i < customers.length; i++) {
-      var random = Math.round(Math.floor(Math.random() * (this.max - this.min + 1) + this.min) * this.averageCookieSales);
-      totalOfCookies = totalOfCookies + random;
-      newArray.push(`${customers[i]}  ${random}  cookies`);
-    }
-    newArray.push(` Total: ${totalOfCookies} cookies`)
-    return newArray;
-  },
-  render: function renderToPage() {
-    var tokyoElement = document.getElementById('store2');
-    var listElement2 = document.createElement('li');
-    listElement2.textContent = store2.tokyo();
-    tokyoElement.appendChild(listElement2);
-  }
-};
+  return newArray; // returning customerstrack array to update//
+}
 
 
 
+var bodyElement = document.getElementById('head');
+var bodyFirstElement = document.createElement('th');
+bodyFirstElement.textContent = locations[0].name;
+bodyElement.appendChild(bodyFirstElement);
+var nameElement = document.createElement('td');
+nameElement.textContent = locations[0].random();
+bodyElement.appendChild(nameElement);
 
-store2.render();
+var bodyFirstElementTwo = document.createElement('th');
+bodyFirstElementTwo.textContent = locations[1].name;
+bodyFirstElement.appendChild(bodyFirstElementTwo);
+var nameElement1 = document.createElement('td');
+nameElement1.textContent = locations[1].random();
+nameElement.appendChild(nameElement1);
 
+var bodyFirstElementThree = document.createElement('th');
+bodyFirstElementThree.textContent = locations[2].name;
+bodyFirstElementTwo.appendChild(bodyFirstElementThree);
+var nameElement2 = document.createElement('td');
+nameElement2.textContent = locations[2].random();
+nameElement1.appendChild(nameElement2);
 
-var store3 = {
-  name: 'Dubai',
-  min: 11,
-  max: 38,
-  averageCookieSales: 3.7,
+var bodyFirstElementFour = document.createElement('th');
+bodyFirstElementFour.textContent = locations[3].name;
+bodyFirstElementThree.appendChild(bodyFirstElementFour);
+var nameElement3 = document.createElement('td');
+nameElement3.textContent = locations[3].random();
+nameElement2.appendChild(nameElement3);
 
-  dubai: function getRandomInt() {
-    var newArray = [];
-    var totalOfCookies = 0;
-
-    for (var i = 0; i < customers.length; i++) {
-      var random = Math.round(Math.floor(Math.random() * (this.max - this.min + 1) + this.min) * this.averageCookieSales);
-      totalOfCookies = totalOfCookies + random;
-      newArray.push(`${customers[i]}  ${random}  cookies`);
-    }
-    newArray.push(` Total: ${totalOfCookies} cookies`)
-    return newArray;
-  },
-  render: function renderToPage() {
-    var dubaiElement = document.getElementById('store3');
-    var listElement3 = document.createElement('li');
-    listElement3.textContent = store3.dubai();
-    dubaiElement.appendChild(listElement3);
-  }
-};
-
-
-
-store3.render();
-
-
-
-var store4 = {
-  name: 'Paris',
-  min: 20,
-  max: 38,
-  averageCookieSales: 2.3,
-
-  paris: function getRandomInt() {
-    var newArray = [];
-    var totalOfCookies = 0;
-
-    for (var i = 0; i < customers.length; i++) {
-      var random = Math.round(Math.floor(Math.random() * (this.max - this.min + 1) + this.min) * this.averageCookieSales);
-      totalOfCookies = totalOfCookies + random;
-      newArray.push(`${customers[i]}  ${random}  cookies`);
-    }
-    newArray.push(` Total: ${totalOfCookies} cookies`)
-    return newArray;
-  },
-  render: function renderToPage() {
-    var parisElement = document.getElementById('store4');
-    var listElement4 = document.createElement('li');
-    listElement4.textContent = store4.paris();
-    parisElement.appendChild(listElement4);
-  }
-};
+var bodyFirstElementFive = document.createElement('th');
+bodyFirstElementFive.textContent = locations[4].name;
+bodyFirstElementFour.appendChild(bodyFirstElementFive);
+var nameElement4 = document.createElement('td');
+nameElement4.textContent = locations[4].random();
+nameElement3.appendChild(nameElement4);
 
 
 
-store4.render();
-
-
-var store5 = {
-  name: 'Lima',
-  min: 2,
-  max: 16,
-  averageCookieSales: 4.6,
-
-  lima: function getRandomInt() {
-    var newArray = [];
-    var totalOfCookies = 0;
-
-    for (var i = 0; i < customers.length; i++) {
-      var random = Math.round(Math.floor(Math.random() * (this.max - this.min + 1) + this.min) * this.averageCookieSales);
-      totalOfCookies = totalOfCookies + random;
-      newArray.push(`${customers[i]}  ${random}  cookies`);
-    }
-    newArray.push(` Total: ${totalOfCookies} cookies`)
-    return newArray;
-  },
-  render: function renderToPage() {
-    var limaElement = document.getElementById('store5');
-    var listElement5 = document.createElement('li');
-    listElement5.textContent = store5.lima();
-    limaElement.appendChild(listElement5);
-  }
-};
 
 
 
-store5.render();
+var footer = function () {
+  var footAppendElement = document.createElement('th');
+  footAppendElement.textContent = 'Total: ';
+  bodyFirstElementFive.appendChild(footAppendElement);
+  var nameElement5 = document.createElement('td')
+  nameElement5.textContent = locations[5].random();
+  nameElement4.appendChild(nameElement5);
+}
 
 
-*/
+footer();
