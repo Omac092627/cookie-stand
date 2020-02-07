@@ -20,8 +20,12 @@ function Stores(name, min, max, averageCookieSales) {
 
 var header = function () {
   var headingElement = document.getElementById('head');
-  var head = document.createTextNode(customers);
-  headingElement.appendChild(head);
+  var headElement = document.createTextNode(customers);
+  headingElement.appendChild(headElement);
+
+
+
+
 }
 header();
 
