@@ -1,35 +1,41 @@
-body{
-  background-color: black;
-  color: white;
-}
-
-
-#link1{
- font-size: 50px;
- position: relative;
- left: 900px;
- bottom: 100px;
- width: 30px;
- 
-}
-
-#link2{
-  font-size: 50px;
+table{
   position: relative;
-  left: 900px;
-  bottom: 100px;
+  margin-top: 60px;
+  border-collapse: collapse;
+  color: white;
+  font-size: .9em;
+  border-spacing: 16em;
+  display: inline-table;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  vertical-align: center;
+  
 }
 
-th{
-  display: inline-flex;
-  margin: 210px;
-  font-size: 30px;
-  padding: 40px;
-  background-color: blue;
-  border-color: whitesmoke;
-  border: solid;
-  margin: 10px;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  
+
+
+#fishimg{
+  position: relative;
+  margin-left: 10%;
+  float: left;
+  border: 1px dashed white;
+}
+
+
+#text{
+  float: left;
+  margin-left: 10%;
+  margin-top: 10%;
+  font-family: fantasy;
+  font-size: 50px;
+  border: 2px solid white;
+  color: whitesmoke;
+}
+
+#text:hover{
+  background-color: salmon;
+}
+
+.body{
+  background-image: url(https://media2.giphy.com/media/mAegV7Rqy8oWQ/source.gif);
 }
