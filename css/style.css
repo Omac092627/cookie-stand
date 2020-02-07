@@ -39,3 +39,16 @@ table{
 .body{
   background-image: url(https://media2.giphy.com/media/mAegV7Rqy8oWQ/source.gif);
 }
+
+
+.food li{
+display: inline;
+position: relative;
+margin-left: 15%;
+
+}
+
+#fishhead{
+  margin-left: 15%;
+  margin-bottom: 5%;
+}
