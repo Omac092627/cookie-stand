@@ -23,9 +23,6 @@ var header = function () {
   var headElement = document.createTextNode(customers);
   headingElement.appendChild(headElement);
 
-
-
-
 }
 header();
 
