@@ -1,35 +1,18 @@
-table{
-  position: relative;
-  margin-top: 60px;
-  border-collapse: collapse;
-  color: white;
-  font-size: .9em;
-  border-spacing: 16em;
-  display: inline-table;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  vertical-align: center;
-  
-}
 
 
 
-#fishimg{
-  position: relative;
-  margin-left: 10%;
-  float: left;
-  border: 1px dashed white;
-}
+
 
 
 #text{
-  float: left;
-  margin-left: 10%;
+  float: top;
+  margin-left: 5%;
   margin-top: 10%;
-  font-family: fantasy;
+  font-family: 'Sriracha', cursive;
   font-size: 50px;
   border: 2px solid white;
   color: whitesmoke;
+  text-align: center;
 }
 
 #text:hover{
@@ -41,14 +24,227 @@ table{
 }
 
 
-.food li{
-display: inline;
-position: relative;
-margin-left: 15%;
+
+
+#fishhead{
+  float: left;
+  width: 20%;
+  margin-left: 10%;
+  margin-right: 5%;
+  margin-top:20%;
+}
+#fishhead2{
+  float: left;
+  width: 20%;
+  margin-top:20%;
+  margin-left: 5%;
+}
+
+table{
+  color: white;
+  margin-left: 10%;
+  border: 1px solid white;
+  border-collapse: collapse;
+  font-size: larger;
+  text-emphasis: bold;
+}
+
+td{
+  border: 1px solid white;
+}
+
+th{
+  border: 1px solid white;
+}
+
+td:hover{
+  background-color: pink;
+}
+
+#home{
+  font-size: 30px;
+}
+
+#body2{
+  background-color: salmon;
+}
+
+#best{
+  position: relative;
+  margin-left: 20%;
+  margin-bottom:5%;
+  font-size: 38px;
+  font-family: 'Sriracha', cursive;
+}
+
+#locations{
+  font-family: 'Sriracha', cursive;
+  position: relative;
+}
+
+
+.homebutton{
+  float: left;
+  margin-left: 20%;
+}
+
+.contactbutton{
+  float: left;
+  margin-left: 10%;
+}
+
+.contact{
+  display: none;
+  position: absolute;
+  background-color: yellow;
+  max-width: 160px;
+  box-shadow: 0px 8px 16px 0px blue;
+  z-index: 1;
+}
+
+.contact a{
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.contact a:hover{
+  background-color: red;
+  transition: 0.4s;
+}
+
+.contactbutton:hover .contact{
+  display: block;
+}
+
+.contactbutton:hover .call{
+  background-color:red;
+  transition: 0.4s;
+}
+.locationsbutton{
+  float: left;
+  margin-left: 10%;
+}
+
+#salespage{
+  float: left;
+  margin-left: 10%;
+}
+
+.locationscontent{
+  display: none;
+  position: absolute;
+  background-color: yellow;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px blue;
+  z-index: 1;
+}
+
+.locationscontent a{
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.locationscontent a:hover{
+  background-color: red;
+}
+
+.locationsbutton:hover .locationscontent{
+  display: block;
+}
+
+.locationsbutton:hover .locate{
+  background-color:red;
+  transition: 0.4s;
+}
+
+.home {
+  font-size: 30px;
+  border: 2px black solid;
+      border-radius: 1em;
+
+}
+.homebutton:hover .times{
+  display: block;
+ 
+}
+
+.homebutton:hover .home{
+  background-color: red;
+  transition: 0.4s;
+}
+.times{
+  display: none;
+  position: absolute;
+  background-color: yellow;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px;
+  z-index: 1;
+}
+
+.times a{
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.times a:hover{
+  background-color: red;
+}
+
+.call{
+  font-size: 30px;
+    border: 2px black solid;
+        border-radius: 1em;
+
 
 }
 
-#fishhead{
-  margin-left: 15%;
-  margin-bottom: 5%;
+.locate{
+  font-size: 30px;
+    border: 2px black solid;
+        border-radius: 1em;
+}
+
+.sales{
+  font-size: 30px;
+    border: 2px black solid;
+    border-radius: 1em;
+}
+.sales:hover{
+  background-color: red;
+  transition: 0.4s;
+}
+
+
+
+.chinook{
+  width: 10%;
+
+}
+
+.cutter{
+  margin-top: 10%;
+}
+
+.family{
+  width: 40%;
+}
+
+.chinook2{
+  width: 8%;
+  float: right;
+}
+
+.fishtext{
+  float: left;
+  margin-top: 20%;
+  margin-right: 3%;
+  margin-left: 2%;
+  font-family: 'Siracha', cursive;
+  font-size: 20px;
 }
