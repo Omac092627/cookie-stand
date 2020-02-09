@@ -12,7 +12,7 @@ function Stores(name, min, max, averageCookieSales, [], totalOfCookies) {
   this.averageCookieSales = averageCookieSales;
   this.soldCookiesPerHour = [];
   this.totalOfCookies = totalOfCookies;
-  locations.push(this)//push your new properties into the object constructor
+  locations.push(this);
 };
 
 
@@ -58,7 +58,7 @@ Stores.prototype.renderData = function () {
     }
     header('td', this.soldCookiesPerHour[i]);
   }
-  header('td', this.totalOfCookies[i]);
+  header('td', this.totalOfCookies);
 };
 
 for (var calculate = 0; calculate < locations.length; calculate++) {
@@ -85,6 +85,7 @@ var footer = function () {
     var tableData = document.createElement('td')
     tableData.textContent = poop;
     tableMain.appendChild(tableData);
+
   }
   var tableData = document.createElement('td');
   tableData.textContent = allTotal;
@@ -92,3 +93,41 @@ var footer = function () {
 }
 
 footer();
+
+
+var userForm = document.getElementById('user-form');
+userForm.addEventListener('submit', handleSubmit);
+
+function handleSubmit(e) {
+
+  e.preventDefault();
+
+  var name = e.target.storeName.value;
+  var mini = e.target.minimumCookies.value;
+  var max = e.target.maximumCookies.value;
+  var average = e.target.avgCookies.value;
+  var dTotal = e.target.dailyTotal.value;
+
+  e.target.storeName.value = null;
+  e.target.minimumCookies.value = parseInt(e.target.minimumCookies.values);
+  e.target.maximumCookies.value = parseInt(e.target.maximumCookies.value);
+  e.target.avgCookies.value = parseInt(e.target.avgCookies);
+  e.target.dailyTotal.value = parseInt(e.target.dailyTotal.value);
+
+  new Stores(name, mini, max, average, dTotal);
+
+  e.target.minimumCookies.value = null;
+  e.target.maximumCookies.value = null;
+  e.target.avgCookies.value = null;
+  e.target.dailyTotal.value = null;
+
+
+
+
+  for (var dude = locations.length - 1; dude > locations.length - 2; dude--) {
+    locations[dude].cookiesPerHour();
+    locations[dude].renderData();
+  }
+
+
+}

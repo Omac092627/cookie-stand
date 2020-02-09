@@ -200,8 +200,6 @@ td:hover{
   font-size: 30px;
     border: 2px black solid;
         border-radius: 1em;
-
-
 }
 
 .locate{
@@ -220,31 +218,11 @@ td:hover{
   transition: 0.4s;
 }
 
-
-
-.chinook{
-  width: 10%;
-
+.pic{
+  display: none;
 }
 
-.cutter{
-  margin-top: 10%;
-}
-
-.family{
-  width: 40%;
-}
-
-.chinook2{
-  width: 8%;
-  float: right;
-}
-
-.fishtext{
-  float: left;
+.container{
   margin-top: 20%;
-  margin-right: 3%;
-  margin-left: 2%;
-  font-family: 'Siracha', cursive;
-  font-size: 20px;
+  margin-left: 20%;
 }
