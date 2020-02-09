@@ -11,8 +11,6 @@
 
 <body id="body2">
   <header id="head">
-    <img class="chinook2" src="images/fish.jpg">
-    <img class="chinook" src="images/chinook.jpg">
 
 
     <p id="best">
@@ -51,22 +49,35 @@
     </nav>
   </header>
   <main>
+    <div class="container">
+      <img class="pic" src="images/cutter.jpeg" style="width: 50%;">
+      <img class="pic" src="images/family.jpg" style="width: 50%;">
+      <img class="pic" src="images/frosted-cookie.jpg" style="width: 50%;">
+      <img class="pic" src="images/shirt.jpg" style="width: 50%;">
 
-    <img id="fishhead" class="salmon" src="images/salmon.png" alt="fish">
-    <p class="fishtext">CHECK OUT SOME OF OUR PICTURES!</p>
-    <img id="fishhead2" class="salmon" src="images/salmon.png" alt="fish">
-
+    </div>
   </main>
+  <script>
 
+    var myIndex = 0;
+    carousel();
 
-  <footer>
-    <img class="cutter" src="images/cutter.jpeg">
-    <img class="family" src="images/family.jpg">
-    <img src="images/frosted-cookie.jpg" class="frost">
-    <img src="images/shirt.jpg" class="shirt">
-  </footer>
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName('pic');
 
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = 'none';
+      }
+      myIndex++;
+      if (myIndex > x.length) {
+        myIndex = 1
+      }
+      x[myIndex - 1].style.display = 'block';
+      setTimeout(carousel, 4000);
+    }
 
+  </script>
 </body>
 
 </html>
