@@ -84,22 +84,24 @@ var footer = function (tableElement, textContent) {
   tableMain.appendChild(tableData);
 }
 
-footer('td', 'Totals')
+footer('td', 'Totals');
+
 
 var allTotal = 0;
-
 for (var t = 0; t < customers.length; t++) {
   var hourly = 0;
   for (var p = 0; p < locations.length; p++) {
     cookiesArray[t] = locations[p].soldCookiesPerHour[t]
     hourly += cookiesArray[t]
-
   }
+
   allTotal += hourly;
   footer('td', hourly);
-
 }
+
 footer('td', allTotal);
+
+
 
 
 
@@ -116,14 +118,12 @@ function handleSubmit(e) {
   var max = e.target.maximumCookies.value;
   var average = e.target.avgCookies.value;
   var [] = e.target.soldCookies.value;
-  var dailyTotal = e.target.dailyTotal.value;
 
   e.target.storeName.value = null;
   e.target.minimumCookies.value = parseInt(e.target.minimumCookies.values);
   e.target.maximumCookies.value = parseInt(e.target.maximumCookies.value);
   e.target.avgCookies.value = parseInt(e.target.avgCookies);
   e.target.soldCookies.value = parseInt(e.target.soldCookies.value);
-  e.target.dailyTotal.value = parseInt(e.target.dailyTotal.value);
 
   new Stores(name, mini, max, average, [], 0);
 
@@ -132,19 +132,19 @@ function handleSubmit(e) {
   e.target.minimumCookies.value = null;
   e.target.maximumCookies.value = null;
   e.target.avgCookies.value = null;
-  e.target.dailyTotal.value = null;
   e.target.soldCookies.value = null;
+
 
 
 
   for (var dude = locations.length - 1; dude > locations.length - 2; dude--) {
     locations[dude].cookiesPerHour();
-
-
-  } if (dude = locations.length - 1) {
     locations[dude].renderData();
 
   }
+  for (var dud = 0; dud > customers.length; dud++) {
+    var elem = document.querySelector('td');
+    elem.parentNode.removeChild(elem);
 
-
+  }
 }

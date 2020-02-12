@@ -72,12 +72,22 @@ td:hover{
 
 
 #best{
-  position: relative;
-  margin-left: 20%;
-  margin-bottom:5%;
-  font-size: 38px;
+  position: absolute;
+  margin-left: 33%;
+  margin-bottom:10%;
+  font-size: 29px;
   font-family: 'Sriracha', cursive;
   color: white;
+
+  animation-name: yup;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes yup{
+  from {color: red;}
+  to {color: yellow;}
 }
 
 #locations{
@@ -87,13 +97,19 @@ td:hover{
 
 
 .homebutton{
+  margin-left: 15%;
+  position: absolute;
   float: left;
-  margin-left: 20%;
+  margin-top: 3%;
 }
 
 .contactbutton{
   float: left;
-  margin-left: 10%;
+  margin-left: 35%;
+  border-radius: 2em;
+  position: absolute;
+    margin-top: 3%;
+
 }
 
 .contact{
@@ -103,6 +119,12 @@ td:hover{
   max-width: 160px;
   box-shadow: 0px 8px 16px 0px blue;
   z-index: 1;
+  float: left;
+  
+}
+
+.contactbutton{
+    box-shadow: 0px 8px 16px red, 0px 6px 20px 0 red;
 }
 
 .contact a{
@@ -127,12 +149,29 @@ td:hover{
 }
 .locationsbutton{
   float: left;
-  margin-left: 10%;
+  margin-left: 55%;
+  border-radius: 2em;
+  position: absolute;
+    margin-top: 3%;
+
+}
+.locationsbutton{
+      box-shadow: 0px 8px 16px red, 0px 6px 20px 0 red;
+
 }
 
-#salespage{
+.sales{
   float: left;
-  margin-left: 10%;
+  margin-left: 80%;
+  border-spacing: 10em;
+  position: absolute;
+    margin-top: 3%;
+
+}
+
+.sales{
+  box-shadow: 0px 8px 16px red, 0px 6px 20px 0 red;
+
 }
 
 .locationscontent{
@@ -165,11 +204,16 @@ td:hover{
 }
 
 .home {
-  font-size: 30px;
+  font-size: 20px;
   border: 2px black solid;
-      border-radius: 1em;
-
+   border-radius: 1em;
 }
+
+.home{
+  box-shadow: 0px 8px 16px red, 0px 6px 20px 0 red;
+}
+
+
 .homebutton:hover .times{
   display: block;
  
@@ -179,6 +223,7 @@ td:hover{
   background-color: red;
   transition: 0.4s;
 }
+
 .times{
   display: none;
   position: absolute;
@@ -187,6 +232,7 @@ td:hover{
   box-shadow: 0px 8px 16px 0px;
   z-index: 1;
 }
+
 
 .times a{
   color: black;
@@ -200,19 +246,19 @@ td:hover{
 }
 
 .call{
-  font-size: 30px;
+  font-size: 20px;
     border: 2px black solid;
         border-radius: 1em;
 }
 
 .locate{
-  font-size: 30px;
+  font-size: 20px;
     border: 2px black solid;
         border-radius: 1em;
 }
 
 .sales{
-  font-size: 30px;
+  font-size: 20px;
     border: 2px black solid;
     border-radius: 1em;
 }
@@ -221,12 +267,14 @@ td:hover{
   transition: 0.4s;
 }
 
-.pic{
-  display: none;
+.w3-container{
+  margin-left: 10%;
+  margin-top: 25%;
+  position: absolute;
+
 }
 
-.container{
-margin-top: 80%;
-margin-left: 30%;
-
+#phold{
+  position: absolute;
+  float: left;
 }
