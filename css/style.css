@@ -97,7 +97,7 @@ td:hover{
 
 
 .homebutton{
-  margin-left: 15%;
+  margin-left: 10%;
   position: absolute;
   float: left;
   margin-top: 3%;
@@ -105,7 +105,7 @@ td:hover{
 
 .contactbutton{
   float: left;
-  margin-left: 35%;
+  margin-left: 30%;
   border-radius: 2em;
   position: absolute;
     margin-top: 3%;
@@ -149,7 +149,7 @@ td:hover{
 }
 .locationsbutton{
   float: left;
-  margin-left: 55%;
+  margin-left: 50%;
   border-radius: 2em;
   position: absolute;
     margin-top: 3%;
@@ -162,7 +162,7 @@ td:hover{
 
 .sales{
   float: left;
-  margin-left: 80%;
+  margin-left: 70%;
   border-spacing: 10em;
   position: absolute;
     margin-top: 3%;
@@ -277,4 +277,67 @@ td:hover{
 #phold{
   position: absolute;
   float: left;
+}
+
+.merch{
+  float: left;
+  margin-left: 85%;
+  border-spacing: 10em;
+  position: absolute;
+    margin-top: 3%;
+
+}
+
+.merch{
+  box-shadow: 0px 8px 16px red, 0px 6px 20px 0 red;
+}
+.merch{
+  font-size: 20px;
+    border: 2px black solid;
+    border-radius: 1em;
+}
+.merch:hover{
+  background-color: red;
+  transition: 0.4s;
+}
+
+
+#shirtMerch{
+  position: absolute;
+  margin-top: 20%;
+  margin-left: 20%;
+}
+
+#salmonBuy{
+  position: absolute;
+  color: white;
+  margin-top: 20%;
+  margin-left: 60%;
+  font-size: 40px;
+  font-weight: bold;
+  box-shadow: 0px 8px 16px red, 0px 6px 20px 0 red;
+}
+
+#salmonPrice{
+  position: absolute;
+  color: white;
+  margin-top: 24%;
+  margin-left: 60%;
+  font-size: 40px;
+  font-weight: bold;
+    box-shadow: 0px 8px 16px red, 0px 6px 20px 0 red;
+
+}
+
+
+#helloThere{
+  position: absolute;
+  color: white;
+  margin-top: 24%;
+  margin-left: 39%;
+  margin-right: 2%;
+  font-size: 30px;
+  font-weight: bold;
+    box-shadow: 0px 8px 16px red, 0px 6px 20px 0 red;
+
 }
