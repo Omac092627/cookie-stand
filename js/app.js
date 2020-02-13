@@ -5,6 +5,7 @@ var locations = [];
 var cookiesArray = [];
 var customers = [`6:00am`, `7:00am`, `8:00am`, `9:00am`, `10:00am`, `11:00am`, `12:00pm`, `1:00pm`, `2:00pm`, `3:00pm`, `4:00pm`, `5:00pm`, `6:00pm`, `7:00pm`,];
 
+
 function Stores(name, min, max, averageCookieSales, [], totalOfCookies) {
   this.name = name;
   this.min = min;
@@ -25,15 +26,21 @@ new Stores('Lima', 2, 16, 4.6, [], 0);
 
 
 Stores.prototype.random = function () {
-  return Math.floor(Math.random() * (this.max - this.min + 1) + this.min) + this.min;
-};
+  for (var h = 0; h < locations.length; h++) {
+    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min) + this.min;
+  }
+}
 
 Stores.prototype.cookiesPerHour = function () {
   for (var c = 0; c < customers.length; c++) {
     this.soldCookiesPerHour[c] = Math.round(this.soldCookiesPerHour[c] = this.averageCookieSales * this.random());
     this.totalOfCookies += this.soldCookiesPerHour[c];
+
   }
-};
+}
+
+
+
 
 var header = function (tableElement, textContent) {
   var tableMain = document.getElementById('gotit');
@@ -47,13 +54,16 @@ header('th');
 for (var h = 0; h < customers.length; h++) {
   header('th', customers[h]);
 }
-header('th', 'Daily Location Total');
 
+header('th', 'Daily Location Total');
 
 Stores.prototype.renderData = function () {
   header('tr');
+
   for (var i = 0; i < customers.length; i++) {
+
     if (i === 0) {
+
       header('td', this.name);
     }
     header('td', this.soldCookiesPerHour[i]);
@@ -64,35 +74,36 @@ Stores.prototype.renderData = function () {
 for (var calculate = 0; calculate < locations.length; calculate++) {
   locations[calculate].cookiesPerHour();
   locations[calculate].renderData();
+
 }
 
-var footer = function () {
+var footer = function (tableElement, textContent) {
   var tableMain = document.getElementById('foot');
-  var tableData = document.createElement('td');
-  tableData.textContent = 'Totals';
-  tableMain.appendChild(tableData);
-
-  var allTotal = 0;
-  for (var t = 0; t < customers.length; t++) {
-    var poop = 0;
-    for (var p = 0; p < locations.length; p++) {
-      cookiesArray[t] = locations[p].soldCookiesPerHour[t]
-      poop += cookiesArray[t]
-    }
-    allTotal += poop;
-    var tableMain = document.getElementById('foot')
-    var tableData = document.createElement('tfoot')
-    var tableData = document.createElement('td')
-    tableData.textContent = poop;
-    tableMain.appendChild(tableData);
-
-  }
-  var tableData = document.createElement('td');
-  tableData.textContent = allTotal;
+  var tableData = document.createElement(tableElement);
+  tableData.textContent = textContent;
   tableMain.appendChild(tableData);
 }
 
-footer();
+footer('td', 'Totals');
+
+
+var allTotal = 0;
+for (var t = 0; t < customers.length; t++) {
+  var hourly = 0;
+  for (var p = 0; p < locations.length; p++) {
+    cookiesArray[t] = locations[p].soldCookiesPerHour[t]
+    hourly += cookiesArray[t]
+  }
+
+  allTotal += hourly;
+  footer('td', hourly);
+}
+
+footer('td', allTotal);
+
+
+
+
 
 
 var userForm = document.getElementById('user-form');
@@ -106,20 +117,22 @@ function handleSubmit(e) {
   var mini = e.target.minimumCookies.value;
   var max = e.target.maximumCookies.value;
   var average = e.target.avgCookies.value;
-  var dTotal = e.target.dailyTotal.value;
+  var [] = e.target.soldCookies.value;
 
   e.target.storeName.value = null;
   e.target.minimumCookies.value = parseInt(e.target.minimumCookies.values);
   e.target.maximumCookies.value = parseInt(e.target.maximumCookies.value);
   e.target.avgCookies.value = parseInt(e.target.avgCookies);
-  e.target.dailyTotal.value = parseInt(e.target.dailyTotal.value);
+  e.target.soldCookies.value = parseInt(e.target.soldCookies.value);
 
-  new Stores(name, mini, max, average, dTotal);
+  new Stores(name, mini, max, average, [], 0);
+
+  console.log(new Stores(name, mini, max, average, [], 0))
 
   e.target.minimumCookies.value = null;
   e.target.maximumCookies.value = null;
   e.target.avgCookies.value = null;
-  e.target.dailyTotal.value = null;
+  e.target.soldCookies.value = null;
 
 
 
@@ -127,7 +140,11 @@ function handleSubmit(e) {
   for (var dude = locations.length - 1; dude > locations.length - 2; dude--) {
     locations[dude].cookiesPerHour();
     locations[dude].renderData();
+
   }
+  for (var dud = 0; dud > customers.length; dud++) {
+    var elem = document.querySelector('td');
+    elem.parentNode.removeChild(elem);
 
-
+  }
 }

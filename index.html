@@ -7,15 +7,17 @@
   <link href="css/reset.css" type="text/css" rel="stylesheet">
   <link href="css/style.css" type="text/css" rel="stylesheet">
   <link href="sales.html" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 </head>
 
 <body id="body2">
   <header id="head">
+    <img id="phold" src="https://via.placeholder.com/1500x100/1e1e1e/1e1e1e
+
+C/O https://placeholder.com/">
 
 
-    <p id="best">
-      We make the best cookies in all the world. Seriously.
-    </p>
 
     <nav class="food">
       <ol>
@@ -47,13 +49,16 @@
         </div>
       </ol>
     </nav>
+
+
   </header>
+  <p id="best">WELCOME TO THE SALMON SHOP!</p>
   <main>
-    <div class="container">
-      <img class="pic" src="images/cutter.jpeg" style="width: 50%;">
-      <img class="pic" src="images/family.jpg" style="width: 50%;">
-      <img class="pic" src="images/frosted-cookie.jpg" style="width: 50%;">
-      <img class="pic" src="images/shirt.jpg" style="width: 50%;">
+    <div class="w3-container">
+      <img class="w3-animate-fading" src="images/cutter.jpeg" style="width: 100%;">
+      <img class="w3-animate-fading" src="images/family.jpg" style="width: 45%;">
+      <img class="w3-animate-fading" src="images/frosted-cookie.jpg" style="height: 40%;">
+      <img class="w3-animate-fading" src="images/shirt.jpg" style="height: 55%;">
 
     </div>
   </main>
@@ -64,7 +69,7 @@
 
     function carousel() {
       var i;
-      var x = document.getElementsByClassName('pic');
+      var x = document.getElementsByClassName("w3-animate-fading");
 
       for (i = 0; i < x.length; i++) {
         x[i].style.display = 'none';
@@ -74,7 +79,7 @@
         myIndex = 1
       }
       x[myIndex - 1].style.display = 'block';
-      setTimeout(carousel, 4000);
+      setTimeout(carousel, 9000);
     }
 
   </script>
